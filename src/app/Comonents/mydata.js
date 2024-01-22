@@ -159,7 +159,7 @@ http.get({'host': 'http://localhost/', 'port': 3000, 'path': '/'}, function(resp
 											<td style={{ border: '1px solid black' }} >{id}</td>
 											<td style={{ border: '1px solid black' }}>{item._id}</td>
 											<td style={{ border: '1px solid black' }}> <input type='text' onChange={(e) => (setFirstName(e.target.value))} defaultValue={item.firstname} placeholder='update First Name' />  </td>
-											<td style={{ border: '1px solid black' }}> <input type='text' onChange={(e) => (setLastName(e.target.value))} defaultValue={item.lastname} placeholder='update Last NAme' />  </td>
+											<td style={{ border: '1px solid black' }}> <input type='text' onChange={(e) => (setLastName(e.target.value))} defaultValue={item.lastname} placeholder='update Last Name' />  </td>
 											<td style={{ border: '1px solid black' }}> <input type='text' onChange={(e) => (setAddress(e.target.value))} defaultValue={item.address} placeholder='update Address' />  </td>
 											<td style={{ border: '1px solid black' }}> <button onClick={() => updateAPI(item._id)}>Update</button>
 												<button disabled >Remove</button>  </td>
