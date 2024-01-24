@@ -79,7 +79,7 @@ function Mydata(props) {
 
 	return (
 		<div>
-			<h3 style={{ border: '1px solid black', color: '#3366CC' }}>nextjs frontend---reactjs library---mongodb database---nextjs backend---CSS and validation ignore</h3>
+			<h3 style={{ border: '1px solid black', color:'#3366CC' }}>nextjs frontend---reactjs library---mongodb database---nextjs backend---validation and CSS ignore</h3>
 			<div>
 				GET API --------url/api/logs
 				<br></br>
