@@ -5,8 +5,9 @@ import {Log}from '@/lib/modal/log'
 export async function GET(){
 
     let data =[];
+  
 try{
-   
+
     await mongoose.connect(connectionStr);
     data=await Log.find();
     var total_entries = await Log.countDocuments();

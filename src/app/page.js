@@ -4,10 +4,10 @@ import Mydata from './Comonents/mydata'
 
 export default function Home() {
   return (
-    <main >
+
       <div >
 <Mydata></Mydata>
       </div>
-    </main>
+    
   )
 }
