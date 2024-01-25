@@ -4,10 +4,10 @@ import mongoose from "mongoose";
 import { NextResponse } from "next/server";
 
 export function ney (){
-d = new Date();
-let seconds = d.getSeconds();
-if(1< seconds >60)
-{
+
+
+
+
 async function GET (request, content){
  
 
@@ -21,7 +21,7 @@ async function GET (request, content){
     return NextResponse.json({sucss:true, result1, seconds })
   }
 }
-}
+
 
 export async function POST (request, content){
 
