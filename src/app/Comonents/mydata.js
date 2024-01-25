@@ -79,7 +79,7 @@ function Mydata(props) {
 
 	return (
 		<div>
-			<h3 style={{ border: '1px solid black', color:'#3366CC' }}>nextjs frontend---reactjs library---mongodb database---nextjs backend---validation and CSS ignore</h3>
+			<h3 style={{ border: '1px solid black', color:'#267378',    textAlign: 'center' }}>nextjs frontend---reactjs library---mongodb database---nextjs backend---validation and CSS ignore</h3>
 			<div>
 				GET API --------url/api/logs
 				<br></br>
@@ -122,12 +122,12 @@ function Mydata(props) {
 							</tr>
 						</thead>
 						{apidata !== null ?
-							<tbody>
+							<tbody >
 								{
 									apidata.map((item, id) => (
 										enableedit === item._id ?
-											<tr key={item.id} >
-												<td style={{ border: '1px solid black' }} >{id}</td>
+											<tr key={item.id}  style={{cursor: 'cell' }}>
+												<td style={{ border: '1px solid black'}} >{id}</td>
 												<td style={{ border: '1px solid black' }}>{item._id}</td>
 												<td style={{ border: '1px solid black' }}> <input type='text' onChange={(e) => (setFirstName(e.target.value))} defaultValue={item.firstname} placeholder='update First Name' />  </td>
 												<td style={{ border: '1px solid black' }}> <input type='text' onChange={(e) => (setLastName(e.target.value))} defaultValue={item.lastname} placeholder='update Last Name' />  </td>
@@ -135,8 +135,8 @@ function Mydata(props) {
 												<td style={{ border: '1px solid black' }}> <button onClick={() => updateAPI(item._id)}>Update</button>
 													<button disabled={enabledelete} >Remove</button>  </td>
 											</tr>
-											: <tr key={item.id}>
-												<td style={{ border: '1px solid black' }}> {id} </td>
+											: <tr key={item.id}  style={{ cursor: 'no-drop' }}>
+												<td style={{ border: '1px solid black',cursor: 'none' }}> {id} </td>
 												<td style={{ border: '1px solid black' }}> {item._id} </td>
 												<td style={{ border: '1px solid black' }}> {item.firstname} </td>
 												<td style={{ border: '1px solid black' }}> {item.lastname} </td>
