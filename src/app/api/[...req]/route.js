@@ -3,24 +3,20 @@ import { Log } from "@/lib/modal/log";
 import mongoose from "mongoose";
 import { NextResponse } from "next/server";
 
-export function ney (){
 
 
 
 
-async function GET (request, content){
- 
 
+export async function GET (request, content){
   let result1=(content.params.req[1])
   // const payload =await result.json();
   await mongoose.connect(connectionStr);
   let log =new Log ({firstname:result1})
    const result =await log.save();
- 
-
-    return NextResponse.json({sucss:true, result1, seconds })
+    return NextResponse.json({sucss:true, result1 })
   }
-}
+
 
 
 export async function POST (request, content){
