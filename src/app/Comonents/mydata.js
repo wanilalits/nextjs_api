@@ -82,15 +82,15 @@ function Mydata(props) {
 			<h3 style={{ border: '1px solid black', color:'#ff0040',    textAlign: 'center' }}>nextjs frontend---reactjs library---mongodb database---nextjs backend---CORS configured---validation and CSS ignored</h3>
 			<div>
 				GET API --------https://vijay-xi.vercel.app/api/logs
-				<br></br>
+				<br></br><br></br>
 				GET API/_id --------https://vijay-xi.vercel.app/api/logs/65aa45b559260a92717c24ad
-				<br></br>
+				<br></br> <br></br>
 				PUT API/_id --------https://vijay-xi.vercel.app/api/logs/65aa45b559260a92717c24ad
-				<br></br>
+				<br></br><br></br>
 				POST API --------https://vijay-xi.vercel.app/api/logs
-				<br></br>
+				<br></br><br></br>
 				DELETE API/_id --------https://vijay-xi.vercel.app/api/logs/65aa45b559260a92717c24ad
-				<br></br>
+				<br></br><br></br>
 				Pass data through web page link --------https://vijay-xi.vercel.app/api/req/user_data
 				<br></br>	<br></br>	<br></br>	<br></br>
 				<div>
