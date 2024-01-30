@@ -9,8 +9,7 @@ import { NextResponse } from "next/server";
 export async function PUT (request, content){
     const logId =content.params.Logid;
     const filter = {_id:logId}
-    let  payload = await request.json();
-    payload = { firstname: 'Test4', lastname: '11', address: '11' }
+    const payload = await request.json();
     console.log(payload)
     await mongoose.connect(connectionStr);
  
