@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 function Mydata(props) {
 	const [firstname, setFirstName] = useState(null)
+	//const [time, setTime] = useState(null)
 	const [lastname, setLastName] = useState(null)
 	const [address, setAddress] = useState(null)
 	const [apidata, setApidata] = useState(null)
@@ -54,7 +55,7 @@ function Mydata(props) {
 	const postAPI = async () => {
 		let data = await fetch(window.location.href + '/api/logs', {
 			method: "POST",
-			body: JSON.stringify({ firstname, lastname, address })
+			body: JSON.stringify({ firstname, lastname, address})
 		});
 		data = await data.json();
 		if (data.sucess) {
@@ -123,6 +124,9 @@ function Mydata(props) {
 									Address
 								</th>
 								<th style={{ border: '1px solid black' }}>
+									time
+								</th>
+								<th style={{ border: '1px solid black' }}>
 									Action
 								</th>
 							</tr>
@@ -138,6 +142,7 @@ function Mydata(props) {
 												<td style={{ border: '1px solid black' }}> <input type='text' onChange={(e) => (setFirstName(e.target.value))} defaultValue={item.firstname} placeholder='update First Name' />  </td>
 												<td style={{ border: '1px solid black' }}> <input type='text' onChange={(e) => (setLastName(e.target.value))} defaultValue={item.lastname} placeholder='update Last Name' />  </td>
 												<td style={{ border: '1px solid black' }}> <input type='text' onChange={(e) => (setAddress(e.target.value))} defaultValue={item.address} placeholder='update Address' />  </td>
+												<td style={{ border: '1px solid black' }}> <input type='text' onChange={(e) => (setLastName(e.target.value))} defaultValue={item.time} placeholder='update Last Name' />  </td>
 												<td style={{ border: '1px solid black' }}> <button onClick={() => updateAPI(item._id)}>Update</button>
 													<button disabled={enabledelete} >Remove</button>  </td>
 											</tr>
@@ -147,6 +152,7 @@ function Mydata(props) {
 												<td style={{ border: '1px solid black' }}> {item.firstname} </td>
 												<td style={{ border: '1px solid black' }}> {item.lastname} </td>
 												<td style={{ border: '1px solid black' }}> {item.address} </td>
+												<td style={{ border: '1px solid black' }}> {item.time} </td>
 												<td style={{ border: '1px solid black' }}><button onClick={() => enableupdate(item._id, item.firstname, item.lastname, item.address)}  > Edit</button>
 													<button onClick={() => deletelog(item._id)} disabled={enabledelete}>Remove</button> </td>
 											</tr>

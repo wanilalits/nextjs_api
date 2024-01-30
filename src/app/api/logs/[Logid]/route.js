@@ -7,12 +7,11 @@ import { NextResponse } from "next/server";
 
 
 export async function PUT (request, content){
-
-
-
     const logId =content.params.Logid;
     const filter = {_id:logId}
-    const payload = await request.json();
+    let  payload = await request.json();
+    payload = { firstname: 'Test4', lastname: '11', address: '11' }
+    console.log(payload)
     await mongoose.connect(connectionStr);
  
     const result = await Log.findOneAndUpdate(filter,payload)

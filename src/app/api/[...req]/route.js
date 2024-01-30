@@ -20,7 +20,6 @@ export async function GET (request, content){
 
 
 export async function POST (request, content){
-
    // const payload =await result.json();
    await mongoose.connect(connectionStr);
    let log =new Log ({firstname:content.params.req[1]})
