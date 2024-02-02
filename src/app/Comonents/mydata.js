@@ -85,10 +85,12 @@ function Mydata(props) {
 
 	return (
 		<div>
+		{
+
 		
-			<h3 style={{ border: '1px solid black', color:'#ff0040',    textAlign: 'center' }}>nextjs frontend---reactjs library---mongodb database---nextjs backend---CORS configured---validation and CSS ignored</h3>
+			//<h3 style={{ border: '1px solid black', color:'#ff0040',    textAlign: 'center' }}>nextjs frontend---reactjs library---mongodb database---nextjs backend---CORS configured---validation and CSS ignored</h3>
 			
-			
+		}
 			
 			<div>
 				GET API --------https://vijay-xi.vercel.app/api/logs

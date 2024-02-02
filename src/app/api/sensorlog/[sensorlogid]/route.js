@@ -14,17 +14,35 @@ export async function GET (request, content){
     //console.log(text); 
        const myArray = text.split(",");
          
-        const logId =myArray[0];
+        
+       const logId =myArray[0];
        const filter = {_id:logId}
          
+       const launchDate = new Date();
+               //                   
+      const futureDate = new Date();
+       futureDate.setTime(launchDate.getTime());
+       
+       //console.log(futureDate);
+       // Expected output: "Thu Jul 01 1999 12:00:00 GMT+0200 (CEST)"
+       
+     //  const fiveMinutesInMillis =5* 60 * 60 * 1000;
+      // futureDate.setTime(futureDate.getTime() + fiveMinutesInMillis);
+       
+       //console.log(futureDate);
+       // Expected output: "Thu Jul 01 1999 12:05:00 GMT+0200 (CEST)"
+       // Note: your timezone may vary
+
+
+
+
+
 
        var currentdate = new Date(); 
-       var datetime =  currentdate.getDate() + "/"
-                       + (currentdate.getMonth()+1)  + "/" 
-                       + currentdate.getFullYear() + " " 
-                       + currentdate.getHours() + ":"  
-                       + currentdate.getMinutes() + ":" 
-                       + currentdate.getSeconds();
+    
+       var datetime = (currentdate.getMonth()+1)  + " " +  currentdate.getDate() +", " + currentdate.getFullYear()+", " +(currentdate.getHours()) + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds();
+
+                      
        const payload = {
         firstname: myArray[1],
           lastname: myArray[2],
@@ -37,7 +55,7 @@ export async function GET (request, content){
          //console.log(content)
          //console.log(request);
          //console.log(payload); 
-         return NextResponse.json({ payload,  sucess:true})
+         return NextResponse.json({ payload, futureDate, sucess:true})
 
   
     
