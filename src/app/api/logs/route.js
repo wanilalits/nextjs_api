@@ -24,16 +24,14 @@ export async function POST (request){
     const payload =await request.json();
    
     var currentdate = new Date(); 
-    function addHours(date, hours) {
-        date.setHours(currentdate.getHours() + hours);
-        date.setMinutes(currentdate.getMinutes() + 30);
-        return currentdate;
-      }
-      const newDate = addHours(currentdate, 5);
+  
+currentdate.setHours(currentdate.getHours() + 5 );
+     
 
- payload['time'] = newDate;
+     // const newDate = addHours(currentdate, 5);
+ payload['time'] = currentdate;
 
-    console.log(payload)
+    //console.log(payload)
     await mongoose.connect(connectionStr);
     let log =new Log (payload)
     const result =await log.save();
