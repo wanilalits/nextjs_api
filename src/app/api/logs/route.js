@@ -16,25 +16,22 @@ catch (error)
 data =['nodata found']
 }
 return NextResponse.json({result:data, sucese:true, total_entries})
-
 }
+
+
 
 export async function POST (request){
     const payload =await request.json();
-
- 
-    //var newNum = "3";
-    //var newVal = "cc";
-    //payload[newNum] = newVal;
-  
+   
     var currentdate = new Date(); 
-    var datetime =  currentdate.getDate() + "/"
-                    + (currentdate.getMonth()+1)  + "/" 
-                    + currentdate.getFullYear() + " " 
-                    + currentdate.getHours() + ":"  
-                    + currentdate.getMinutes() + ":" 
-                    + currentdate.getSeconds();
-    payload['time'] = datetime;
+    function addHours(date, hours) {
+        date.setHours(currentdate.getHours() + hours);
+        date.setMinutes(currentdate.getMinutes() + 30);
+        return currentdate;
+      }
+      const newDate = addHours(currentdate, 5);
+
+ payload['time'] = newDate;
 
     console.log(payload)
     await mongoose.connect(connectionStr);
