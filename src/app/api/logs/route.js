@@ -29,7 +29,6 @@ currentdate.setHours(currentdate.getHours() + 5);
 currentdate.setMinutes(currentdate.getMinutes() + 30);   
 let newcurrentdate=currentdate.getHours() +":"+ currentdate.getMinutes()+":"+currentdate.getSeconds() +"\xa0\xa0\xa0\xa0\xa0"+ currentdate.getDate() +"-"+ parseInt(currentdate.getMonth())+parseInt(1) +"-"+ currentdate.getFullYear()
   
- payload['time'] = currentdate;
  payload['time'] = newcurrentdate;
     //console.log(payload)
     await mongoose.connect(connectionStr);
