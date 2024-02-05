@@ -41,7 +41,6 @@ export async function GET (request, content){
          //console.log(request);
          //console.log(payload); 
          return NextResponse.json({ payload, sucess:true})
-/*  */
-     //    return NextResponse.json({  sucess:true})
+
     
 }
