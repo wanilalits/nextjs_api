@@ -23,7 +23,7 @@ export async function GET (request, content){
        var currentdate = new Date(); 
        currentdate.setHours(currentdate.getHours() + 5);
        currentdate.setMinutes(currentdate.getMinutes() + 30);   
-       let newcurrentdate=currentdate.getHours() +":"+ currentdate.getMinutes()+":"+currentdate.getSeconds() +"\xa0\xa0\xa0\xa0\xa0"+ currentdate.getDate() +"-"+ parseInt(currentdate.getMonth())+parseInt(1) +"-"+ currentdate.getFullYear()
+       let newcurrentdate=currentdate.getHours() +":"+ currentdate.getMinutes()+":"+currentdate.getSeconds() +"\xa0\xa0\xa0\xa0\xa0"+ currentdate.getDate() +"-"+ (currentdate.getMonth() +1) +"-"+ currentdate.getFullYear()
 
        const logId =myArray[0];
        const filter = {_id:logId}
