@@ -1,4 +1,4 @@
-import { connectionStr } from "@/lib/db";
+import { connectionStr, count } from "@/lib/db";
 import { Log } from "@/lib/modal/log";
 import mongoose from "mongoose";
 import { NextResponse } from "next/server";
@@ -17,13 +17,13 @@ export async function GET (request, content){
      const myArray = text.split(",");
     
         
-     
+    
          
   
        var currentdate = new Date(); 
        currentdate.setHours(currentdate.getHours() + 5);
        currentdate.setMinutes(currentdate.getMinutes() + 30);   
-       let newcurrentdate=currentdate.getHours() +":"+ currentdate.getMinutes()+":"+currentdate.getSeconds() +"\xa0\xa0\xa0\xa0\xa0"+ currentdate.getDate() +"-"+ (currentdate.getMonth() +1) +"-"+ currentdate.getFullYear()
+       let newcurrentdate=currentdate.getHours() +":"+ currentdate.getMinutes()+":"+currentdate.getSeconds() +" "+ currentdate.getDate() +"-"+ (currentdate.getMonth() +1) +"-"+ currentdate.getFullYear()
 
        const logId =myArray[0];
        const filter = {_id:logId}
@@ -34,12 +34,13 @@ export async function GET (request, content){
            address: myArray[3],
            time: newcurrentdate,
             }
-            console.log(payload);
+           // console.log(payload);
          await mongoose.connect(connectionStr);
          const result = await Log.findOneAndUpdate(filter, payload)
          //console.log(content)
          //console.log(request);
          //console.log(payload); 
+     
          return NextResponse.json({ payload, sucess:true})
 
     

@@ -7,3 +7,4 @@ export const connectionStr = "mongodb+srv://lalilswani:KrGXqcaDbahGMmaL@cluster0
 //export const connectionStr = "mongodb+srv://"+username+":"+password+"@cluster0.ygf21f6.mongodb.net/sample_mflix?retryWrites=true&w=majority";
 //username=lalilswani
 //password=KrGXqcaDbahGMmaL
+export var count =0;

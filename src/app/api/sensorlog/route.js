@@ -2,6 +2,7 @@ import {connectionStr,data} from '@/lib/db';
 import mongoose from 'mongoose';
 import { NextResponse } from 'next/server';
 import {Log}from '@/lib/modal/log'
+
 export async function GET(){
     let data =[];
 try{
@@ -36,7 +37,7 @@ export async function POST (request){
                     + currentdate.getSeconds();
     payload['time'] = datetime;
 
-    console.log(payload)
+    //console.log(payload)
     await mongoose.connect(connectionStr);
     let log =new Log (payload)
     const result =await log.save();
